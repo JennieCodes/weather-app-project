@@ -1,0 +1,57 @@
+body {
+    background: #83c5be;
+}
+hr {
+    width: 200px;
+    margin-left: -20px;
+    border: 2px solid black;
+}
+input[type="text"] {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 220px;
+}
+button[type="button"] {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 45px;
+    margin-left: 80px;
+    border-radius: 30px;
+}
+
+.degree{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: -30px;
+    margin-left: 100px;
+}
+.heading {
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-size: 30px;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.sun {
+    display: inline-block;
+    margin-top: -160px;
+    width: 400px;
+    position: relative;
+}
+.cloud {
+    display: inline-block;
+    width: 700px;
+    position: relative;
+    transform: translate(-100px, -330px);
+}
+.temperatures {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: -350px;
+    text-align: center;
+    background: #006d77;
+    padding: 80px;
+}
+.temp-icons {
+    width: 100px;
+}
