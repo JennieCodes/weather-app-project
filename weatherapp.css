@@ -65,9 +65,11 @@ li {
 #celsius-link {
     text-decoration: none;
     font-size: 30px;
+    font-weight: lighter;
 }
 #fahrenheit-link {
     text-decoration: none;
     font-size: 30px;
+    font-weight: lighter;
 }
 
