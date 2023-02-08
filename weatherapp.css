@@ -12,6 +12,11 @@ input[type="text"] {
     margin-top: 50px;
     margin-left: 220px;
 }
+form {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 220px;
+  }
 button[type="button"] {
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 45px;
