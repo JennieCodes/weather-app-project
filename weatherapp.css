@@ -1,93 +1,93 @@
 body {
     background: #83c5be;
-}
-hr {
+  }
+  hr {
     width: 200px;
     margin-left: -20px;
     border: 2px solid black;
-}
-input[type="text"] {
-    font-family: 'Roboto Condensed', sans-serif;
+  }
+  input[type="text"] {
+    font-family: "Roboto Condensed", sans-serif;
     width: 200px;
-    margin-top: 50px;
-    margin-left: 220px;
-}
-form {
+  }
+  form {
     display: flex;
     margin-top: 50px;
     margin-left: 220px;
   }
-button[type="button"] {
-    font-family: 'Roboto Condensed', sans-serif;
+  button[type="button"] {
+    font-family: "Roboto Condensed", sans-serif;
     margin-top: 45px;
     margin-left: 100px;
     border-radius: 30px;
-}
-li {
+  }
+  li {
     list-style: none;
-}
-li:first-letter {
+  }
+  li:first-letter {
     text-transform: capitalize;
-}
-
-.units {
+  }
+  
+  .units {
     font-size: 30px;
-}
-.degree{
-    font-family: 'Roboto Condensed', sans-serif;
+  }
+  .degree {
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 50px;
     font-weight: bold;
     margin-top: 60px;
     margin-bottom: -30px;
     margin-left: 100px;
-}
-.heading {
-    font-family: 'Roboto Condensed', sans-serif; 
+  }
+  .heading {
+    font-family: "Roboto Condensed", sans-serif;
     margin-top: 40px;
     margin-left: 100px;
-}
-.sun {
+  }
+  .sun {
     display: inline-block;
     margin-top: -160px;
     width: 400px;
     position: relative;
-}
-.cloud {
+  }
+  .cloud {
     display: inline-block;
     width: 700px;
     position: relative;
     transform: translate(-100px, -330px);
-}
-.temperatures {
-    font-family: 'Roboto Condensed', sans-serif;
+  }
+  .temperatures {
+    font-family: "Roboto Condensed", sans-serif;
     margin-top: -350px;
     text-align: center;
     background: #006d77;
     padding: 80px;
-}
-.temp-icons {
+  }
+  .temp-icons {
     width: 100px;
-}
-#celsius-link {
+  }
+  #celsius-link {
     text-decoration: none;
     font-size: 30px;
     font-weight: lighter;
-}
-#fahrenheit-link {
+  }
+  #fahrenheit-link {
     text-decoration: none;
     font-size: 30px;
     font-weight: lighter;
-}
-#date, #time, #description {
+  }
+  #date,
+  #time,
+  #description {
     margin-left: -35px;
     font-size: 30px;
-}
-#city {
+  }
+  #city {
     font-size: 30px;
-}
-#climate {
+  }
+  #climate {
     float: right;
     margin-right: -700px;
     margin-top: -100px;
     font-size: 15px;
-}
+  }
