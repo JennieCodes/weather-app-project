@@ -29,7 +29,8 @@ body {
   }
   
   .units {
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: lighter;
   }
   .degree {
     font-family: "Roboto Condensed", sans-serif;
@@ -44,21 +45,8 @@ body {
     margin-top: 40px;
     margin-left: 100px;
   }
-  .sun {
-    display: inline-block;
-    margin-top: -160px;
-    width: 400px;
-    position: relative;
-  }
-  .cloud {
-    display: inline-block;
-    width: 700px;
-    position: relative;
-    transform: translate(-100px, -330px);
-  }
   .temperatures {
     font-family: "Roboto Condensed", sans-serif;
-    margin-top: -350px;
     text-align: center;
     background: #006d77;
     padding: 80px;
@@ -66,16 +54,16 @@ body {
   .temp-icons {
     width: 100px;
   }
-  #celsius-link {
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: lighter;
+  #icon {
+    width: 400px;
   }
+  #celsius-link, 
   #fahrenheit-link {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: lighter;
   }
+
   #date,
   #time,
   #description {
