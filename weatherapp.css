@@ -57,7 +57,11 @@ body {
   #icon {
     width: 400px;
   }
-  #celsius-link, 
+  #celsius-link {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: lighter;
+  }
   #fahrenheit-link {
     text-decoration: none;
     font-size: 40px;
