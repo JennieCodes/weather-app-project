@@ -8,6 +8,7 @@ body {
   }
   input[type="text"] {
     font-family: "Roboto Condensed", sans-serif;
+    margin-left: -100px;
     width: 200px;
   }
   form {
@@ -15,10 +16,10 @@ body {
     margin-top: 50px;
     margin-left: 220px;
   }
-  button[type="button"] {
+  button[type="submit"] {
     font-family: "Roboto Condensed", sans-serif;
+    width: 80px;
     margin-top: 45px;
-    margin-left: 100px;
     border-radius: 30px;
   }
   li {
