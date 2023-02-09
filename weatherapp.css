@@ -28,7 +28,16 @@ body {
   li:first-letter {
     text-transform: capitalize;
   }
-  
+  a:link {
+    color: #006466;
+  }
+  a:visited {
+    color: #006466;
+  }
+  a:active {
+    color: #006466;
+  }
+
   .units {
     font-size: 40px;
     font-weight: lighter;
@@ -46,10 +55,36 @@ body {
     margin-top: 40px;
     margin-left: 100px;
   }
+  .dark-theme {
+    width: 50px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .dark-theme:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    transform: rotateZ(180deg);
+    transition: .5s ease-in-out;
+  }
+  .light-theme {
+    width: 50px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 10px;
+    transform: rotateZ(180deg);
+  }
+  .light-theme:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    transform: rotateZ(0deg);
+    transition: .5s ease-in-out;
+  }
   .temperatures {
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
     background: #006d77;
+    margin-top: 150px;
     padding: 80px;
   }
   .temp-icons {
@@ -59,7 +94,6 @@ body {
     color: black;
     cursor: default;
   }
-  
   #icon {
     width: 400px;
   }

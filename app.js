@@ -42,9 +42,12 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
+    // "src",
+    // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/${response.data.weather[0].icon}.png`
   );
+  iconElement.style.width = "250px"
 }
 function search(city) {
   let apiKey = "275a753ef1dcfe59aa4a1d07e378894a";
@@ -85,3 +88,26 @@ celsiusLink.addEventListener('click', convertToCelsius);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener('click', convertToFahrenheit);
 
+var lightTheme = true;
+
+function toggleTheme(event) {
+  let temperatureDiv = document.querySelector(".temperatures");
+  let body = document.querySelector("body")
+  
+  if (lightTheme) {
+  event.target.classList.remove("dark-theme");
+  event.target.classList.add("light-theme");
+  body.style.background = "#006d77";
+  temperatureDiv.style.background = "#83c5be";
+  lightTheme = false;
+  } else {
+    event.target.classList.remove("light-theme");
+    event.target.classList.add("dark-theme");
+    body.style.background = "#83c5be";
+    temperatureDiv.style.background = "#006d77";
+    lightTheme = true;
+    }
+}
+
+let toggleThemeButton = document.querySelector(".toggle");
+toggleThemeButton.addEventListener("click", toggleTheme)
