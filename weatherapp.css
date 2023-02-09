@@ -55,6 +55,11 @@ body {
   .temp-icons {
     width: 100px;
   }
+  .weather-temperature .active {
+    color: black;
+    cursor: default;
+  }
+  
   #icon {
     width: 400px;
   }
@@ -68,7 +73,6 @@ body {
     font-size: 40px;
     font-weight: lighter;
   }
-
   #date,
   #time,
   #description {

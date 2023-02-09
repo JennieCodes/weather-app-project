@@ -63,12 +63,16 @@ search("New York");
 
 function convertToCelsius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let celsiusElement = document.querySelector("#temperature");
   let celsiusTemperature = ((5/9) * (celsiusElement.innerHTML - 32));
   celsiusElement.innerHTML = Math.round(celsiusTemperature);
 }
 function convertToFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitElement = document.querySelector("#temperature");
   fahrenheitElement.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -80,3 +84,4 @@ celsiusLink.addEventListener('click', convertToCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener('click', convertToFahrenheit);
+
