@@ -24,7 +24,6 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
-  let precipitationElement = document.querySelector("#precipitation");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
@@ -34,9 +33,6 @@ function displayTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
-  precipitationElement.innerHTML = response.data.precipitation
-    ? response.data.precipitation.value
-    : 0;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -94,10 +90,13 @@ function toggleTheme(event) {
   let temperatureDiv = document.querySelector(".temperatures");
   let body = document.querySelector("body");
   let githubLink = document.querySelector(".github-link");
-  
+  let unitsDiv = document.querySelector(".units");
+
   if (lightTheme) {
   event.target.classList.remove("dark-theme");
   event.target.classList.add("light-theme");
+  unitsDiv.classList.remove(".light");
+  unitsDiv.classList.add(".dark");
   body.style.background = "#006d77";
   temperatureDiv.style.background = "#83c5be";
   githubLink.style.color = "#83c5be";
@@ -105,6 +104,8 @@ function toggleTheme(event) {
   } else {
     event.target.classList.remove("light-theme");
     event.target.classList.add("dark-theme");
+    unitsDiv.classList.remove(".dark");
+    unitsDiv.classList.add(".light");
     body.style.background = "#83c5be";
     temperatureDiv.style.background = "#006d77";
     githubLink.style.color = "#006d77";

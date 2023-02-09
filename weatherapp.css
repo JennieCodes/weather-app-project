@@ -80,6 +80,12 @@ body {
     transform: rotateZ(0deg);
     transition: .5s ease-in-out;
   }
+  .units.light a:not(.active) {
+    color: #006466;
+    }
+  .units.dark a:not(.active) {
+    color: #83c5be;
+    }
   .temperatures {
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
