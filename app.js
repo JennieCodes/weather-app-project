@@ -93,18 +93,21 @@ var lightTheme = true;
 function toggleTheme(event) {
   let temperatureDiv = document.querySelector(".temperatures");
   let body = document.querySelector("body");
+  let githubLink = document.querySelector(".github-link");
   
   if (lightTheme) {
   event.target.classList.remove("dark-theme");
   event.target.classList.add("light-theme");
   body.style.background = "#006d77";
   temperatureDiv.style.background = "#83c5be";
+  githubLink.style.color = "#83c5be";
   lightTheme = false;
   } else {
     event.target.classList.remove("light-theme");
     event.target.classList.add("dark-theme");
     body.style.background = "#83c5be";
     temperatureDiv.style.background = "#006d77";
+    githubLink.style.color = "#006d77";
     lightTheme = true;
     }
 }

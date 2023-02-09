@@ -29,16 +29,13 @@ body {
     text-transform: capitalize;
   }
   a:link {
-    color: #faf3dd;
+    color: #006466;
   }
   a:visited {
-    color: #faf3dd;
+    color: #006466;
   }
   a:active {
-    color: #faf3dd;
-  }
-  a.github-link {
-    color:#faf3dd;
+    color: #006466;
   }
 
   .units {
