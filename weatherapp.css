@@ -29,13 +29,16 @@ body {
     text-transform: capitalize;
   }
   a:link {
-    color: #006466;
+    color: #faf3dd;
   }
   a:visited {
-    color: #006466;
+    color: #faf3dd;
   }
   a:active {
-    color: #006466;
+    color: #faf3dd;
+  }
+  a.github-link {
+    color:#faf3dd;
   }
 
   .units {
@@ -88,7 +91,7 @@ body {
     padding: 80px;
   }
   .temp-icons {
-    width: 100px;
+    width: 80px;
   }
   .weather-temperature .active {
     color: black;

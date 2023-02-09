@@ -92,7 +92,7 @@ var lightTheme = true;
 
 function toggleTheme(event) {
   let temperatureDiv = document.querySelector(".temperatures");
-  let body = document.querySelector("body")
+  let body = document.querySelector("body");
   
   if (lightTheme) {
   event.target.classList.remove("dark-theme");
