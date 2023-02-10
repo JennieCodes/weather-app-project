@@ -86,7 +86,7 @@ body {
   .units.dark a:not(.active) {
     color: #83c5be;
     }
-  .temperatures {
+  .daily-forecast {
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
     background: #006d77;
