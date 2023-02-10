@@ -102,6 +102,7 @@ body {
   }
   #icon {
     width: 400px;
+    margin-left: 50px;
   }
   #celsius-link {
     text-decoration: none;
@@ -126,5 +127,5 @@ body {
     float: right;
     margin-right: -700px;
     margin-top: -100px;
-    font-size: 15px;
+    font-size: 20px;
   }

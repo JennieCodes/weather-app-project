@@ -1,5 +1,5 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
+function formatDate(timestamp, timezone) {
+  let date = new Date(timestamp + (timezone * 1000));
   let days = [
     "Sunday",
     "Monday",
@@ -9,12 +9,12 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
-  let hours = date.getHours();
+  let day = days[date.getUTCDay()];
+  let hours = date.getUTCHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+  let minutes = date.getUTCMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -36,7 +36,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000, response.data.timezone);
   iconElement.setAttribute(
     // "src",
     // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -95,8 +95,8 @@ function toggleTheme(event) {
   if (lightTheme) {
   event.target.classList.remove("dark-theme");
   event.target.classList.add("light-theme");
-  unitsDiv.classList.remove(".light");
-  unitsDiv.classList.add(".dark");
+  unitsDiv.classList.remove("light");
+  unitsDiv.classList.add("dark");
   body.style.background = "#006d77";
   temperatureDiv.style.background = "#83c5be";
   githubLink.style.color = "#83c5be";
@@ -104,8 +104,8 @@ function toggleTheme(event) {
   } else {
     event.target.classList.remove("light-theme");
     event.target.classList.add("dark-theme");
-    unitsDiv.classList.remove(".dark");
-    unitsDiv.classList.add(".light");
+    unitsDiv.classList.remove("dark");
+    unitsDiv.classList.add("light");
     body.style.background = "#83c5be";
     temperatureDiv.style.background = "#006d77";
     githubLink.style.color = "#006d77";
@@ -114,4 +114,4 @@ function toggleTheme(event) {
 }
 
 let toggleThemeButton = document.querySelector(".toggle");
-toggleThemeButton.addEventListener("click", toggleTheme)
+toggleThemeButton.addEventListener("click", toggleTheme);
