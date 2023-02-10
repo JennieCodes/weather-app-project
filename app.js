@@ -62,11 +62,13 @@ search("New York");
 
 function convertToCelsius(event) {
   event.preventDefault();
+  if(!celsiusLink.classList.contains("active")){
+    let celsiusElement = document.querySelector("#temperature");
+    let celsiusTemperature = ((5/9) * (celsiusElement.innerHTML - 32));
+    celsiusElement.innerHTML = Math.round(celsiusTemperature);
+  }
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
-  let celsiusElement = document.querySelector("#temperature");
-  let celsiusTemperature = ((5/9) * (celsiusElement.innerHTML - 32));
-  celsiusElement.innerHTML = Math.round(celsiusTemperature);
 }
 function convertToFahrenheit(event) {
   event.preventDefault();
