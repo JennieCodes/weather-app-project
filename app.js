@@ -20,31 +20,44 @@ function formatDate(timestamp, timezone) {
   }
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast(response) {
-  let forecast = response.data.daily.slice(0, 7);
 
-  let forecastElement = document.querySelector('.daily-forecast');
+function formatDay(timestamp) {
+  let date = new Date(timestamp);
+  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  let day = days[date.getDay()];
+  return `${day}`;
+}
+function displayForecast(response) {
+  const days = [4, 12, 20, 28, 36];
+  let forecast = response.data.list.filter(function (a, index) {
+    if (days.includes(index)) return true;
+    else return false;
+  });
+
+  console.log('HERE: ', forecast);
+  let forecastElement = document.querySelector('#forecast');
+
+  forecastElement.innerHTML = '';
 
   forecast.forEach(function (forecastDay) {
-    forecastElement.appendChild(`<div class="col-2">
-    <div class="weather-forecast-date">${forecastDay.dt}</div>
-    <img
-      src="images/${forecastDay.weather[0].icon}.png" 
-      alt=""
-      width="80"
-    />
-    <div class="weather-forecast-temperatures">
-      <span class="weather-forecast-temperature-max">${forecastDay.temp.max}</span>
-      <span class="weather-forecast-temperature-min">${forecastDay.temp.min}</span>
-    </div>
-  </div>
-  `);
+    forecastElement.innerHTML += `<div class='col-2'>
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt * 1000)}</div>
+        <img src="images/${forecastDay.weather[0].icon}.png" alt="" width="80" />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max">${Math.round(
+            (forecastDay.main.temp_max - 273) * 1.8 + 32
+          )}° | </span>
+          <span class="weather-forecast-temperature-min">${Math.round(
+            (forecastDay.main.temp_min - 273) * 1.8 + 32
+          )}°</span>
+        </div>
+      </div>`;
   });
 }
 
 function getForecast(coordinates) {
   let apiKey = "275a753ef1dcfe59aa4a1d07e378894a";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
