@@ -20,36 +20,29 @@ function formatDate(timestamp, timezone) {
   }
   return `${day} ${hours}:${minutes}`;
 }
-// function displayForecast(response) {
-//   let forecast = response.data.daily;
+function displayForecast(response) {
+  let forecast = response.data.daily.slice(0, 7);
 
-//   let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector('.daily-forecast');
 
-//   let forecastHTML = `div class="row">`;
-//   forecast.forEach(function(forecastDay, index)) {
-//     if (index < 6) {
-//     forecastHTML = 
-//       forecastHTML = 
-//       `<div class="col-2">
-//         <div class="weather-forecast-date">${forecastDay.dt}</div>
-//         <img
-//           src="mages/${response.data.weather[0].icon}.png" 
-//           alt=""
-//           width="80"
-//         />
-//         <div class="weather-forecast-temperatures">
-//           <span class="weather-forecast-temperature-max>${Math.round(forecastDay.temp.max)}°</span>
-//           <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.main)}°</span>
-//         </div>
-//       </div>
-//       `;
-//     }
-//   }
-//   forecastHTML = forecastHTML + `</div>`;
-//   forecastElement.innerHTML = forecastHTML;
-// }
+  forecast.forEach(function (forecastDay) {
+    forecastElement.appendChild(`<div class="col-2">
+    <div class="weather-forecast-date">${forecastDay.dt}</div>
+    <img
+      src="images/${forecastDay.weather[0].icon}.png" 
+      alt=""
+      width="80"
+    />
+    <div class="weather-forecast-temperatures">
+      <span class="weather-forecast-temperature-max">${forecastDay.temp.max}</span>
+      <span class="weather-forecast-temperature-min">${forecastDay.temp.min}</span>
+    </div>
+  </div>
+  `);
+  });
+}
 
-function getforecast(coordinates) {
+function getForecast(coordinates) {
   let apiKey = "275a753ef1dcfe59aa4a1d07e378894a";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=imperial`;
   axios.get(apiUrl).then(displayForecast);
