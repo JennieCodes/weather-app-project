@@ -48,7 +48,7 @@ function displayForecast(response) {
             (forecastDay.main.temp_max - 273) * 1.8 + 32
           )}° | </span>
           <span class="weather-forecast-temperature-min">${Math.round(
-            (forecastDay.main.temp_min - 273) * 1.8 + 32
+            (forecastDay.main.temp_min - 273)
           )}°</span>
         </div>
       </div>`;
