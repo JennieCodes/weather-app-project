@@ -132,7 +132,7 @@ fahrenheitLink.addEventListener('click', convertToFahrenheit);
 var lightTheme = true;
 
 function toggleTheme(event) {
-  let temperatureDiv = document.querySelector(".temperatures");
+  let temperatureDiv = document.querySelector(".daily-forecast");
   let body = document.querySelector("body");
   let githubLink = document.querySelector(".github-link");
   let unitsDiv = document.querySelector(".units");
